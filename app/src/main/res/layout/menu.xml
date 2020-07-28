@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:src="@drawable/clover"
+        android:layout_width="120dp"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+
+        ></ImageView>
+
+    <LinearLayout
+        android:id="@+id/profile"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+android:orientation="horizontal">
+    <androidx.cardview.widget.CardView
+android:layout_marginLeft="25dp"
+android:layout_marginTop="25dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        app:cardCornerRadius="64dp">
+        <ImageView
+            android:id="@+id/userimgs"
+            android:src="@drawable/boy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            ></ImageView>
+
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview"
+
+        />
+</LinearLayout>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_below="@+id/profile"
+    android:layout_marginTop="50dp"
+    android:layout_marginLeft="5dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu1"
+
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/circlebackgroundyellow"
+            android:padding="10dp"
+            android:src="@drawable/homegreen" />
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Home"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu2"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/circlebackgroundyellow"
+            android:padding="10dp"
+            android:src="@drawable/notifygreen" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="20dp"
+            android:text="Notifications"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu3"
+
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/circlebackgroundyellow"
+            android:padding="10dp"
+            android:src="@drawable/giftgreen" />
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Share"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/menu4"
+
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/circlebackgroundyellow"
+            android:padding="10dp"
+            android:src="@drawable/axegreen" />
+
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Logout"
+
+            />
+    </LinearLayout>
+
+
+</LinearLayout>
+</RelativeLayout>

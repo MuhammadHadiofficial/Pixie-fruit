@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "32973586905",
+    "firebase_url": "https://pixie-fruit.firebaseio.com",
+    "project_id": "pixie-fruit",
+    "storage_bucket": "pixie-fruit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:32973586905:android:e75fd49421e0479f0f19c8",
+        "android_client_info": {
+          "package_name": "com.example.pixiefruit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "32973586905-ilrar4kcgbps38jshiib7h55ep28prs1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pixiefruit",
+            "certificate_hash": "fdcba9c2948e39defd1cb3fbeff72252400f8d02"
+          }
+        },
+        {
+          "client_id": "32973586905-vpt05qgl819rjb62k34hehi77qko0m6v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pixiefruit",
+            "certificate_hash": "74461fd368ed65495f39cd6434a0e1fe1e930bd6"
+          }
+        },
+        {
+          "client_id": "32973586905-nm41jsf9tksqo63a619s93s7doed2n4o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtyx-Aio9Ie7Gk-wF8cjIxA4hp_2w_4xU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "32973586905-nm41jsf9tksqo63a619s93s7doed2n4o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

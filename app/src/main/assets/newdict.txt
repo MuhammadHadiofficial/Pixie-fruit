@@ -1,0 +1,10 @@
+0 fruit_Black_spot
+1 fruit_Canker
+2 fruit_Greening
+3 fruit_Healthy
+4 fruit_Scab
+5 leaves_Black_spot
+6 leaves_Canker
+7 leaves_Greening
+8 leaves_Healthy
+9 leaves_Melanose
