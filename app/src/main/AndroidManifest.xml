@@ -26,12 +26,14 @@
     <application
         android:name=".NotificanClass"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/pixiui"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/pixiui"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LeavesDisease"></activity>
+        <activity android:name=".AdditionalInfoActivity"></activity>
+        <activity android:name=".History" />
+        <activity android:name=".LeavesDisease" />
         <activity android:name=".ClassifierActivity" />
         <activity android:name=".YieldInfo" />
         <activity android:name=".PredictYield" />

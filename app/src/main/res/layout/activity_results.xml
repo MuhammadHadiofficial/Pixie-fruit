@@ -29,14 +29,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="20dp"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tree 1  :"
-                        android:textSize="15dp">
+                        android:textSize="12dp">
 
                     </TextView>
 
@@ -45,7 +45,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="20"
-                        android:textSize="15dp"
+                        android:textSize="12dp"
                         >
 
                     </TextView>
@@ -62,7 +62,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:textSize="15dp"
+                        android:textSize="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tree 1 ">
@@ -72,7 +72,7 @@
                     <TextView
 
                         android:id="@+id/count2"
-                        android:textSize="15dp"
+                        android:textSize="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="20">
@@ -90,7 +90,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:textSize="15dp"
+                        android:textSize="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tree 2 : ">
@@ -100,7 +100,7 @@
                     <TextView
 
                         android:id="@+id/count3"
-                        android:textSize="15dp"
+                        android:textSize="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="20">
@@ -118,7 +118,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:textSize="15dp"
+                        android:textSize="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Tree 3 : ">
@@ -128,7 +128,7 @@
                     <TextView
 
                         android:id="@+id/count4"
-                        android:textSize="15dp"
+                        android:textSize="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="20">
@@ -152,14 +152,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="20dp"
                     android:orientation="horizontal">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Average 1  :"
-                        android:textSize="15dp">
+                        android:textSize="12dp">
 
                     </TextView>
 
@@ -168,7 +168,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="20"
-                        android:textSize="15dp"
+                        android:textSize="12dp"
                         >
 
                     </TextView>
@@ -185,7 +185,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:textSize="15dp"
+                        android:textSize="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Average 2 ">
@@ -195,7 +195,7 @@
                     <TextView
 
                         android:id="@+id/avg2"
-                        android:textSize="15dp"
+                        android:textSize="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="20">
@@ -213,7 +213,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:textSize="15dp"
+                        android:textSize="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Average 3 : ">
@@ -223,7 +223,7 @@
                     <TextView
 
                         android:id="@+id/avg3"
-                        android:textSize="15dp"
+                        android:textSize="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="20">
@@ -241,7 +241,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:textSize="15dp"
+                        android:textSize="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Average 4 : ">
@@ -251,7 +251,7 @@
                     <TextView
 
                         android:id="@+id/avg4"
-                        android:textSize="15dp"
+                        android:textSize="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="20">
@@ -275,11 +275,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="20dp"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:textSize="15dp"
+                        android:textSize="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total Avg ">
@@ -306,7 +306,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:textSize="15dp"
+                        android:textSize="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Estimated Total :">
@@ -333,7 +333,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:textSize="15dp"
+                        android:textSize="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total Trees: ">
@@ -341,7 +341,7 @@
                     </TextView>
 
                     <TextView
-                        android:textSize="15dp"
+                        android:textSize="10dp"
                         android:id="@+id/totaltrees"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -372,7 +372,7 @@
             android:layout_gravity="center_horizontal"
             android:contentDescription="Count/Tree" />
 
-        <com.github.mikephil.charting.charts.BarChart
+        <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/barChart2"
             android:layout_width="200dp"
             android:layout_height="200dp"

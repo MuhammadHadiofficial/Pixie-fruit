@@ -1,5 +1,6 @@
 package com.example.pixiefruit;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -13,6 +14,11 @@ import android.widget.Toast;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.tensorflow.lite.Interpreter;
 
@@ -32,6 +38,35 @@ public class PredictYield extends AppCompatActivity {
         treesinput = findViewById(R.id.treesinput);
         predict_btn = findViewById(R.id.predictButton);
         final Intent resultactivity = new Intent(getApplicationContext(), Results.class);
+        FirebaseDatabase.getInstance().getReference("users/"+ FirebaseAuth.getInstance().getCurrentUser().getUid().toString())
+                .child("testruns").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                FirebaseDatabase.getInstance().getReference("users/"+ FirebaseAuth.getInstance().getCurrentUser().getUid().toString())
+                        .child("testruns").setValue(String.valueOf(Integer.parseInt(dataSnapshot.getValue().toString())+1));
+                Toast.makeText(PredictYield.this,"hi"+Integer.parseInt(dataSnapshot.getValue().toString()) , Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        FirebaseDatabase.getInstance().getReference("users/"+ FirebaseAuth.getInstance().getCurrentUser().getUid().toString())
+                .child("totalimages").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                FirebaseDatabase.getInstance().getReference("users/"+ FirebaseAuth.getInstance().getCurrentUser().getUid().toString())
+                        .child("totalimages").setValue(String.valueOf(Integer.parseInt(dataSnapshot.getValue().toString())+8));
+                Toast.makeText(PredictYield.this,"hi"+Integer.parseInt(dataSnapshot.getValue().toString()) , Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         predict_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

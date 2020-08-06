@@ -132,7 +132,7 @@ public class ClassifierActivity extends AppCompatActivity {
     }
 
     private MappedByteBuffer loadmodelfile(Activity activity) throws IOException {
-        AssetFileDescriptor fileDescriptor=activity.getAssets().openFd("newmodel.tflite");
+        AssetFileDescriptor fileDescriptor=activity.getAssets().openFd("model_unquant.tflite");
         FileInputStream inputStream=new FileInputStream(fileDescriptor.getFileDescriptor());
         FileChannel fileChannel=inputStream.getChannel();
         long startoffset = fileDescriptor.getStartOffset();
@@ -150,7 +150,7 @@ public class ClassifierActivity extends AppCompatActivity {
     private void showresult(){
 
         try{
-            labels = FileUtil.loadLabels(this,"newdict.txt");
+            labels = FileUtil.loadLabels(this,"labels.txt");
         }catch (Exception e){
             e.printStackTrace();
         }

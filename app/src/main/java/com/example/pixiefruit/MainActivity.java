@@ -22,8 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Animation bganim, fromBottom;
     private int My_REQUEST_CODE = 101;
     //    Button showDetails;
-    LinearLayout linearLayout, textHome, logout, profile, mainmenu;
-    TextView text;
+    LinearLayout linearLayout, textHome, logout, profile, mainmenu,menu2;
+    TextView text,username;
     LinearLayout profilebtn, algoRunbtn,classifybtn,leavesbtn;
     ProgressDialog progressDialog;
     ImageView userimg;
@@ -53,7 +53,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .inject();
         algoRunbtn = findViewById(R.id.algoRunbtn);
         algoRunbtn.setOnClickListener(this);
-
+username=findViewById(R.id.username);
+username.setText(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
         classifybtn=findViewById(R.id.classifybtn);
         classifybtn.setOnClickListener(this);
 
@@ -78,6 +79,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         logout = findViewById(R.id.menu4);
         logout.setOnClickListener(this);
         profile = findViewById(R.id.menu3);
+        menu2=findViewById(R.id.menu2);
+        menu2.setOnClickListener(this);
         profile.setOnClickListener(this);
 //        profilebtn=findViewById(R.id.profilebtn);
 //        profilebtn.setOnClickListener(new View.OnClickListener() {
@@ -112,6 +115,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (view.getId() == R.id.menu3) {
             Intent intent1 = new Intent(MainActivity.this, UserProfileActivity.class);
+            startActivity(intent1);
+        } else if (view.getId() == R.id.menu2) {
+            Intent intent1 = new Intent(MainActivity.this, History.class);
+            startActivity(intent1);
+        } else if (view.getId() == R.id.menu1) {
+            Intent intent1 = new Intent(MainActivity.this, MainActivity.class);
             startActivity(intent1);
         } else if (view.getId() == R.id.algoRunbtn) {
             Intent intent1 = new Intent(MainActivity.this, ImageProcess.class);

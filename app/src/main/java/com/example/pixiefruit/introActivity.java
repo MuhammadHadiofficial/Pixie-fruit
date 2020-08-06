@@ -44,8 +44,8 @@ public class introActivity extends AppCompatActivity {
         final List<ScreenItem> mlist=new ArrayList<>();
         animation= AnimationUtils.loadAnimation(getApplicationContext(),R.anim.button_animation);
         mlist.add(new ScreenItem("Pixie Fruit", "Citrus Fruit Counting App!", R.drawable.common_full_open_on_phone));
-        mlist.add(new ScreenItem("Capture and Count", "Using the Power of Deep Learning Count and Estimate Yield Just With a Click", R.drawable.common_google_signin_btn_icon_light_normal));
-        mlist.add(new ScreenItem("Power Of AI","lorem ipsum hi bye shayelorem ipsum hi bye shayelorem ipsum hi bye shayelorem ipsum hi bye shayelorem ipsum hi bye shayelorem ipsum hi bye shaye",R.drawable.common_google_signin_btn_text_dark_focused));
+        mlist.add(new ScreenItem("Capture and Count", "Using the Power of Machine Learning Count and Estimate Yield Just With a Click", R.drawable.ic_baseline_find_in_page_24));
+        mlist.add(new ScreenItem("Detect Diseases","Find Diseases on fruits and leaves",R.drawable.ic_info_black_24dp));
         introViewPagerAdapter=new IntroViewPagerAdapter(this,mlist);
         screenPager.setAdapter(introViewPagerAdapter);
         tabLayout.setupWithViewPager(screenPager);

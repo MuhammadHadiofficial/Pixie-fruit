@@ -19,12 +19,18 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
 import com.example.pixiefruit.Model.Counterizer;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.opencv.android.OpenCVLoader;
 import org.opencv.android.Utils;
@@ -47,11 +53,7 @@ public class ImageProcess extends AppCompatActivity implements View.OnClickListe
     private static final int GALLERY_REQUEST_CODE = 1;
     private static final int CAMERA = 2;
     ProgressBar progressBar;
-
-    public static final String MyPREFERENCES = "MyPrefs";
-    //    LinearLayout layoutBottomSheet;
-//Button btnBottomSheet;
-//    BottomSheetBehavior sheetBehavior;
+    public static final String MyPREFERENCES = "MyPrefs";;
     List<Uri> imageUri;
     Button img1;
     Button img2;
@@ -193,11 +195,8 @@ public class ImageProcess extends AppCompatActivity implements View.OnClickListe
 //        }
         switch (requestCode) {
             case GALLERY_REQUEST_CODE:
-                //data.getData returns the content URI for the selected Image
                 Uri selectedImage = data.getData();
-//                CropImage.activity(selectedImage)
-//                        .start(this);
-                ImageView imageView = findViewById(preferences.getInt("imgid", 0));
+     ImageView imageView = findViewById(preferences.getInt("imgid", 0));
                 try {
 
                     final InputStream imageStream = getContentResolver().openInputStream(selectedImage);
@@ -462,6 +461,7 @@ public class ImageProcess extends AppCompatActivity implements View.OnClickListe
     }
 
     public void completetrigger(View view) {
+
         Intent resultactivity = new Intent(this, PredictYield.class);
         PendingIntent intent = PendingIntent.getActivity(this, 0, resultactivity, 0);
 

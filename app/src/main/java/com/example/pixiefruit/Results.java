@@ -10,26 +10,35 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pixiefruit.Model.Counterizer;
+import com.example.pixiefruit.Model.HistoryInstance;
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class Results extends AppCompatActivity {
     private BarChart barChart;
+    private  LineChart lineChart;
     Button home;
     TextView count1,count2,count3,count4,totalavg,predict,avg1,avg2,avg3,avg4,totaltrees;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
-        setBarchart();
-        setLinechart();
         count1=findViewById(R.id.count1);
         count2=findViewById(R.id.count2);
         count3=findViewById(R.id.count3);
@@ -65,7 +74,7 @@ public class Results extends AppCompatActivity {
         count2.setText(String.valueOf(count2num));
         count3.setText(String.valueOf(count3num));
         count4.setText(String.valueOf(count4num));
-
+storeToDb(total);
         home = findViewById(R.id.cirSave);
         home.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,21 +83,45 @@ public class Results extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        setBarchart(count1num,count2num,count3num,count4num);
+        setLinechart(count1num,count2num,count3num,total);
 
     }
+private  void storeToDb(int total){
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-    private ArrayList getData() {
+    if (user == null) {
+        // No session user
+        return;
+    }
+    String userId = user.getUid();
+
+//Example you need save a Store in
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+    DatabaseReference stores = database.getReference("history");
+    HistoryInstance instance=new HistoryInstance(total);
+    stores.child(userId).push().setValue(instance);
+}
+    private ArrayList getData(int num1,int num2,int num3,int num4) {
         ArrayList<BarEntry> entries = new ArrayList<>();
-        entries.add(new BarEntry(0f, 30f));
-        entries.add(new BarEntry(1f, 80f));
-        entries.add(new BarEntry(2f, 60f));
-        entries.add(new BarEntry(3f, 50f));
+        entries.add(new BarEntry(0f, num1));
+        entries.add(new BarEntry(1f, num2));
+        entries.add(new BarEntry(2f, num3));
+        entries.add(new BarEntry(3f, num4));
         return entries;
     }
-
-    private void setBarchart() {
+    private ArrayList getDataLine(int num1,int num2,int num3,int num4) {
+        ArrayList<Entry> entries = new ArrayList<>();
+        entries.add(new Entry(0f, num1));
+        entries.add(new Entry(1f, num2));
+        entries.add(new Entry(2f, num3));
+        entries.add(new Entry(3f, num4));
+        return entries;
+    }
+    private void setBarchart(int num1,int num2,int num3,int num4) {
         barChart = findViewById(R.id.barChart);
-        BarDataSet barDataSet = new BarDataSet(getData(), "Tree Count");
+        BarDataSet barDataSet = new BarDataSet(getData(num1,num2,num3,num4), "Tree Count");
         barDataSet.setBarBorderWidth(0.9f);
         barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
         BarData barData = new BarData(barDataSet);
@@ -107,25 +140,24 @@ public class Results extends AppCompatActivity {
         barChart.invalidate();
     }
 
-    private void setLinechart() {
-        barChart = findViewById(R.id.barChart2);
-        BarDataSet barDataSet = new BarDataSet(getData(), "Tree Count");
-        barDataSet.setBarBorderWidth(0.9f);
-        barDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
-        BarData barData = new BarData(barDataSet);
-        barChart.getAxisRight().setEnabled(false);
-        barChart.setDrawGridBackground(false);
-        barChart.setDrawBorders(false);
-        XAxis xAxis = barChart.getXAxis();
+    private void setLinechart(int num1,int num2, int num3, int num4) {
+        lineChart = findViewById(R.id.barChart2);
+        LineDataSet linedata1 = new LineDataSet(getDataLine(num1,num2,num3,num4), "Tree Count");
+        ArrayList<ILineDataSet> dataSets=new ArrayList<>();
+        dataSets.add(linedata1);
+        LineData data = new LineData(dataSets);
+        lineChart.getAxisRight().setEnabled(false);
+        lineChart.setDrawGridBackground(false);
+        lineChart.setDrawBorders(false);
+        XAxis xAxis = lineChart.getXAxis();
         xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
         final String[] count = new String[]{"Tree 1", "Tree 2", "Tree 3", "Tree 4"};
         IndexAxisValueFormatter formatter = new IndexAxisValueFormatter(count);
         xAxis.setGranularity(1f);
         xAxis.setValueFormatter(formatter);
-        barChart.setData(barData);
-        barChart.setFitBars(true);
-        barChart.animateXY(2000, 2000);
-        barChart.invalidate();
+        lineChart.setData(data);
+        lineChart.animateXY(2000, 2000);
+        lineChart.invalidate();
     }
 
 }
