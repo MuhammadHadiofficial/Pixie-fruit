@@ -1,6 +1,7 @@
 # Pixie-fruit
 
-This Application will deal in counting the fruits on a tree and based upon sample it will
+Main objective of the application was to run object detection models on mobile CPU and GPUs for offline inference in agriculture farms where internet is not available.
+This Application will deal in counting the fruits using two different methods of countour detection on low end devices and yolov5 on high end devices (method is chosen automatically by the application based on device as farmers are not good users of phone) on a tree and based upon sample it will
 estimate the total yield of the garden using DNN based regression with L2 regularization.
 ## Getting Started
 
